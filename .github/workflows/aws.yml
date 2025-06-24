@@ -1,0 +1,40 @@
+name: Deploy to ECS Fargate
+
+on:
+  push:
+    branches: [ dev ]  # Triggers only on dev branch
+
+jobs:
+  deploy:
+    name: Build, Push and Deploy to ECS
+    runs-on: ubuntu-latest
+
+    permissions:
+      id-token: write
+      contents: read
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v4
+
+    - name: Configure AWS Credentials (OIDC)
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        role-to-assume: arn:aws:iam::403395453326:role/github-actions-deploy-role
+        aws-region: eu-central-1
+
+    - name: Login to Amazon ECR
+      uses: aws-actions/amazon-ecr-login@v2
+
+    - name: Build and Push Docker Image to ECR
+      run: |
+        IMAGE_URI=403395453326.dkr.ecr.eu-central-1.amazonaws.com/node-hello-world
+        docker build -t $IMAGE_URI:latest .
+        docker push $IMAGE_URI:latest
+
+    - name: Deploy to ECS Fargate
+      run: |
+        aws ecs update-service \
+          --cluster node-cluster \
+          --service node-hello-world-services \
+          --force-new-deployment

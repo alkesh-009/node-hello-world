@@ -74,5 +74,7 @@ git push origin main
 3. Verify in ECS Console or visit Public IP:3000
 
 
+**user acess**
+user acess http://<public-ip>:3000 
 
 

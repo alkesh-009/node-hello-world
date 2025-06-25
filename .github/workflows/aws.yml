@@ -2,7 +2,7 @@ name: Deploy Node.js App to ECS Fargate
 
 on:
   push:
-    branches: [ main ]  # Trigger deployment from the main branch
+    branches: [ main ]
 
 jobs:
   deploy:
@@ -36,5 +36,5 @@ jobs:
       run: |
         aws ecs update-service \
           --cluster node-app-cluster \
-          --service node-hello-world-services \
+          --service node-app-service \
           --force-new-deployment

@@ -36,6 +36,7 @@ The main thing about this project is you just push new changes to your github on
 - Docker
 - AWS ECR (Elastic Container Registry)
 - AWS ECS (Fargate)
+- Task definitions (we use 0.5cpu and 1gb memeory enough for our app)
 - GitHub Actions
 - OIDC IAM Role (secure auth)
 

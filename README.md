@@ -1,4 +1,5 @@
-![image](https://github.com/user-attachments/assets/e2cced0b-264c-4048-9746-1348d83851f0)
+![image](https://github.com/user-attachments/assets/54a1e153-6cf5-4eeb-8e68-1353842d415b)
+
 
 **Node.js Hello World App on AWS ECS (Fargate) with GitHub Actions CI/CD**
 
@@ -35,6 +36,7 @@ The main thing about this project is you just push new changes to your github on
 - Docker
 - AWS ECR (Elastic Container Registry)
 - AWS ECS (Fargate)
+- Task definitions (we use 0.5cpu and 1gb memeory enough for our app)
 - GitHub Actions
 - OIDC IAM Role (secure auth)
 

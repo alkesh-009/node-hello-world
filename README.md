@@ -49,13 +49,13 @@ The main thing about this project is you just push new changes to your github on
 3. ECS Fargate pulls the new image and redeploys
 
 
-**IAM & AWS Setup**
-- **ECR Repository**: 'node-app'
-- **ECS Cluster**: 'node-app-cluster'
-- **Task Definition**: 'node-app-task'
-- **ECS Service**: 'node-app-service'
-- **IAM Role for OIDC**: not mention here due to security 
-- **AWS Region**: 'ap-south-1'
+**IAM & AWS Setup** we used-
+- **ECR Repository**
+- **ECS Cluster**
+- **Task Definition**
+- **ECS Service**
+- **IAM Role for OIDC**
+
 
 ---
 

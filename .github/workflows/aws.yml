@@ -2,7 +2,7 @@ name: Deploy Node.js App to ECS Fargate
 
 on:
   push:
-    branches: [ main ]  # Triggers deployment when code is pushed to dev branch
+    branches: [ main ]  # Trigger deployment from the main branch
 
 jobs:
   deploy:
@@ -21,14 +21,14 @@ jobs:
       uses: aws-actions/configure-aws-credentials@v4
       with:
         role-to-assume: arn:aws:iam::842675987532:role/github-actions-deploy-role
-        aws-region: eu-central-1
+        aws-region: ap-south-1
 
     - name: Login to Amazon ECR
       uses: aws-actions/amazon-ecr-login@v2
 
     - name: Build and Push Docker Image
       run: |
-        IMAGE_URI=842675987532.dkr.ecr.eu-central-1.amazonaws.com/node-app
+        IMAGE_URI=842675987532.dkr.ecr.ap-south-1.amazonaws.com/node-app
         docker build -t $IMAGE_URI:latest .
         docker push $IMAGE_URI:latest
 
@@ -36,5 +36,5 @@ jobs:
       run: |
         aws ecs update-service \
           --cluster node-app-cluster \
-          --service node-app-services \
+          --service node-hello-world-services \
           --force-new-deployment

@@ -1,4 +1,5 @@
-![image](https://github.com/user-attachments/assets/54a1e153-6cf5-4eeb-8e68-1353842d415b)
+![image](https://github.com/user-attachments/assets/78af838f-b13c-4fff-844c-508700257b39)
+
 
 
 **Node.js Hello World App on AWS ECS (Fargate) with GitHub Actions CI/CD**

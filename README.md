@@ -4,9 +4,9 @@
 
 This project we can see how to deploy a Dockerized Node.js application to **Amazon ECS (Fargate)** using **GitHub Actions** as the CI/CD pipeline.
 
+**Fistly we have to check and run our application on our local server if our node-app runs smoothly, than we can do the process further like deploymet using github actions**
 
 Project Structure
-
 
 ├── index.js
 ├── package.json

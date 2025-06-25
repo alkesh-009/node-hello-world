@@ -74,7 +74,14 @@ git push origin main
 3. Verify in ECS Console or visit Public IP:3000
 
 
-**user acess**
-user acess http://<public-ip>:3000 
+ **User Access Flow**
+- A user accesses the app via the **public IP of the ECS Task's ENI**
+- The container (running Node.js) responds with the "Hello from Node.js" message
+
+**Outcome**
+- A fully automated, secure, and scalable CI/CD pipeline using native AWS tools and GitHub
+- No EC2 instances or manual deployment needed
+
+                                                              **Thank you**
 
 
